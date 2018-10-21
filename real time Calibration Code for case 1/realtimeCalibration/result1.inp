@@ -1,0 +1,174 @@
+[TITLE]
+ EPANET Example Network 1 
+A simple example of modeling chlorine decay. Both bulk and 
+wall reactions are included.  
+
+[JUNCTIONS]
+ 1                                   710.0000
+ 2                                   700.0000
+ 3                                   695.0000
+ 4                                   700.0000
+ 5                                   695.0000
+ 6                                   690.0000
+ 7                                   700.0000
+ 8                                   710.0000
+
+[RESERVOIRS]
+ 9                                  1088.0000 
+
+[TANKS]
+
+[PIPES]
+ 2                               1                               2                                  5280.0000      14.0000     100.0000       0.0000 
+ 3                               2                               3                                  5280.0000      10.0000     100.0000       0.0000 
+ 7                               4                               5                                  5280.0000      10.0000     100.0000       0.0000 
+ 8                               5                               6                                  5280.0000      12.0000     100.0000       0.0000 
+ 11                              7                               8                                  5280.0000       6.0000     100.0000       0.0000 
+ 4                               1                               4                                  5280.0000      10.0000     100.0000       0.0000 
+ 5                               2                               5                                  5280.0000      12.0000     100.0000       0.0000 
+ 6                               3                               6                                  5280.0000       8.0000     100.0000       0.0000 
+ 9                               4                               7                                  5280.0000       8.0000     100.0000       0.0000 
+ 10                              5                               8                                  5280.0000       6.0000     100.0000       0.0000 
+ 1                               9                               1                                 10630.0000      12.0000     100.0000       0.0000 
+
+[PUMPS]
+
+[VALVES]
+
+[DEMANDS]
+ 1                                   150.002472    1
+ 2                                   149.999069    1
+ 3                                    99.996010    1
+ 4                                   149.997498    1
+ 5                                   199.997253    1
+ 6                                   149.997055    1
+ 7                                   100.002335    1
+ 8                                   100.008080    1
+
+[EMITTERS]
+
+[STATUS]
+
+[PATTERNS]
+ 1                                     1.0000       1.2000       1.4000       1.6000       1.4000       1.2000
+ 1                                     1.0000       0.8000       0.6000       0.4000       0.6000       0.8000
+
+[CURVES]
+ 1                                  1500.0000     250.0000
+
+[CONTROLS]
+
+[QUALITY]
+ 1                                     0.500000
+ 2                                     0.500000
+ 3                                     0.500000
+ 4                                     0.500000
+ 5                                     0.500000
+ 6                                     0.500000
+ 7                                     0.500000
+ 8                                     0.500000
+ 9                                     1.000000
+
+[SOURCES]
+
+[MIXING]
+
+[REACTIONS]
+ ORDER  BULK            1.00
+ ORDER  WALL            1
+ ORDER  TANK            1.00
+ GLOBAL BULK            -0.500000
+ GLOBAL WALL            -1.000000
+
+[ENERGY]
+ GLOBAL EFFIC        75.0000
+ DEMAND CHARGE       0.0000
+
+[TIMES]
+ DURATION            24:00:00
+ HYDRAULIC TIMESTEP  1:00:00
+ QUALITY TIMESTEP    0:05:00
+ REPORT TIMESTEP     1:00:00
+ REPORT START        0:00:00
+ PATTERN TIMESTEP    2:00:00
+ PATTERN START       0:00:00
+ RULE TIMESTEP       0:06:00
+ START CLOCKTIME     0:00:00
+ STATISTIC           NONE
+
+[OPTIONS]
+ UNITS               GPM
+ PRESSURE            PSI
+ HEADLOSS            H-W
+ PATTERN             1
+ UNBALANCED          CONTINUE 10
+ QUALITY             Chlorine mg/L
+ DEMAND MULTIPLIER   1.0000
+ EMITTER EXPONENT    0.5000
+ VISCOSITY           1.000000
+ DIFFUSIVITY         1.000000
+ SPECIFIC GRAVITY    1.000000
+ TRIALS              40
+ ACCURACY            0.00100000
+ TOLERANCE           0.01000000
+ CHECKFREQ           2
+ MAXCHECK            10
+ DAMPLIMIT           0.00000000
+
+[REPORT]
+ PAGESIZE            0
+ STATUS              YES
+ SUMMARY             NO
+ ENERGY              NO
+ NODES               NONE
+ LINKS               NONE
+ Elevation           NO
+ Demand              PRECISION 2
+ Head                PRECISION 2
+ Pressure            PRECISION 2
+ Quality             PRECISION 2
+ Length              NO
+ Diameter            NO
+ Flow                PRECISION 2
+ Velocity            PRECISION 2
+ Headloss            PRECISION 2
+ Quality             NO
+ State               NO
+ Setting             NO
+ Reaction            NO
+[TAGS]
+
+[RULES]
+
+
+
+
+[COORDINATES]
+;Node            	X-Coord         	Y-Coord
+ 1               	30.00           	70.00           
+ 2               	50.00           	70.00           
+ 3               	70.00           	70.00           
+ 4               	30.00           	40.00           
+ 5               	50.00           	40.00           
+ 6               	70.00           	40.00           
+ 7               	30.00           	10.00           
+ 8               	50.00           	10.00           
+ 9               	10.00           	70.00           
+
+[VERTICES]
+;Link            	X-Coord         	Y-Coord
+
+[LABELS]
+;X-Coord           Y-Coord          Label & Anchor Node
+ 6.99             73.63            "Source"                 
+ 13.48            68.13            "Pump"                 
+ 43.85            91.21            "Tank"                 
+
+[BACKDROP]
+ DIMENSIONS     	7.00            	6.00            	73.00           	94.00           
+ UNITS          	None
+ FILE           	
+ OFFSET         	0.00            	0.00            
+
+
+[END]
